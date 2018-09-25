@@ -37,8 +37,22 @@ public class MainActivity extends AppCompatActivity
 
     private String addOne(String bin)
     {
+
         //will return a new String that is the given String with 1 added to it
-        return bin;
+        String answer = "";
+        for(int i = bin.length() - 1; i >= 0; i--)
+        {
+            if(bin.charAt(i) == '1')
+            {
+                answer = '0' + answer;
+            }
+            else
+            {
+                answer = bin.substring(0, i) + '1' + answer;
+                break;
+            }
+        }
+        return answer;
     }
 
     private String encodeAsTwosComplement(String bin)
